@@ -8,7 +8,7 @@ def bubble_sort(arr)
       end
     end
   end
-  return arr
+  arr
 end
 
 test_arr = [4, 3, 78, 2, 0, 2]
@@ -21,12 +21,12 @@ def bubble_sort_by(arr)
         if number.positive?
           temp = arr[j]
           arr[j] = arr[j + 1]
-					arr[j + 1] = temp
+          arr[j + 1] = temp
         end
       end
     end
   end
-  return arr
+  arr
 end
 
 bubble_sort_by(test_arr) do |cur, nex|
