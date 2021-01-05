@@ -2,9 +2,10 @@ def bubble_sort(arr)
   (arr.length - 1).times do
     arr.each_with_index do |_num, j|
       next unless arr[j + 1] && arr[j] > arr[j + 1]
-        temp = arr[j]
-        arr[j] = arr[j + 1]
-        arr[j + 1] = temp
+
+      temp = arr[j]
+      arr[j] = arr[j + 1]
+      arr[j + 1] = temp
     end
   end
   arr
@@ -16,11 +17,13 @@ def bubble_sort_by(arr)
   (arr.length - 1).times do
     arr.each_with_index do |_num, j|
       next unless arr[j + 1]
-        number = yield(arr[j], arr[j + 1])
-        next unless number.positive?
-          temp = arr[j]
-          arr[j] = arr[j + 1]
-          arr[j + 1] = temp
+
+      number = yield(arr[j], arr[j + 1])
+      next unless number.positive?
+
+      temp = arr[j]
+      arr[j] = arr[j + 1]
+      arr[j + 1] = temp
     end
   end
   arr
