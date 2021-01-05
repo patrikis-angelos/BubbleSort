@@ -5,9 +5,10 @@ def bubble_sort(arr)
         temp = arr[j]
         arr[j] = arr[j + 1]
         arr[j + 1] = temp
+        next
       end
     end
-	end
+  end
 end
 
 test_arr = [4, 3, 78, 2, 0, 2]
@@ -16,16 +17,16 @@ bubble_sort(test_arr)
 p test_arr
 
 def bubble_sort_by(arr)
-	(arr.length - 1).times do
-		for j in 0..(arr.length - 2)
-			number = yield(arr[j], arr[j + 1])
-			if number > 0
-				temp = arr[j]
-				arr[j] = arr[j + 1]
-				arr[j + 1] = temp
-			end
-		end
-	end
+  (arr.length - 1).times do
+    for j in 0..(arr.length - 2)
+      number = yield(arr[j], arr[j + 1])
+      if number.positive?
+        temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+      end
+    end
+  end
 end
 
 bubble_sort_by(test_arr) do |cur, nex|
